@@ -1,0 +1,7 @@
+body {
+    background: linear-gradient(135deg, #e3f0ff 0%, #b6d0ff 100%);
+    color: #222;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+    margin: 0;
+    padding: 0;
+}
