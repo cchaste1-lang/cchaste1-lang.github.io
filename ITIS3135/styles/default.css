@@ -1,7 +1,112 @@
+/* ==================================================================== */
+/* 1. DEFAULT STYLES (Applies to all screens, forms the DESKTOP base) */
+/* ==================================================================== */
+
 body {
     background: linear-gradient(135deg, #e3f0ff 0%, #b6d0ff 100%);
     color: #222;
-    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+    /* Font Stack: If 'Fira Mono' is not locally installed or linked, 
+       the browser will fall back to 'Consolas', then 'Menlo', etc. */
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace; 
     margin: 0;
     padding: 0;
+}
+
+header, main, footer {
+    /* Required: Add Max-Width for the Page/Containers */
+    max-width: 1200px; 
+    
+    /* Required: Add a Percentage Width for Flexibility/Responsiveness */
+    width: 90%; 
+    
+    /* Required: Setting the margins to 0, auto to Center Content */
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+/* Specific main styles */
+main {
+    background: #fff; /* Give main a white background for readability */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+/* Header and Footer Styling */
+header {
+    background: #222;
+    color: #fff;
+    padding-top: 20px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    padding-bottom: 20px;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 20px 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ==================================================================== */
+/* 2. MEDIA QUERIES (Overrides for 3 different sizes) */
+/* ==================================================================== */
+
+/* Rule Overrides For Tablet Devices (Size 2: 601px to 980px) */
+/* This targets the 'Next 3' size range, typically tablets */
+@media screen and (min-width: 601px) and (max-width: 980px) {
+    /* Slightly increase container width to use more screen space */
+    header, main, footer {
+        width: 95%;
+    }
+}
+
+/* Rule Overrides For Mobile Devices (Size 3: up to 600px) */
+/* This targets the smallest screens, typically phones */
+@media screen and (max-width: 600px) {
+    
+    /* Max out the width for small screens to use all available space */
+    header, main, footer {
+        width: 98%; 
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    
+    /* Stack the navigation menu vertically for better touch usability */
+    nav ul li {
+        display: block; /* Makes each link take its own line */
+        margin: 10px 0; /* Add vertical space between links */
+    }
+    
+    /* Adjust padding and font sizes for a compact mobile view */
+    header {
+        padding-top: 10px;
+    }
+    main {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
 }
