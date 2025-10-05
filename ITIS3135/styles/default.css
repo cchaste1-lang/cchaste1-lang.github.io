@@ -91,7 +91,6 @@ nav ul li a:hover {
     
     /* Max out the width for small screens to use all available space */
     header, main, footer {
-        width: 98%; 
         padding-left: 1%;
         padding-right: 1%;
     }
