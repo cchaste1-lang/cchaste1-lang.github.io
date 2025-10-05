@@ -2,6 +2,13 @@
 /* 1. DEFAULT STYLES (Applies to all screens, forms the DESKTOP base) */
 /* ==================================================================== */
 
+/* Ensure padding and border are included in width/height */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background: linear-gradient(135deg, #e3f0ff 0%, #b6d0ff 100%);
     color: #222;
