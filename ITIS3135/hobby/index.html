@@ -213,7 +213,6 @@
 
         /* Show the target section when its ID is in the URL hash (CSS fallback) */
         section:target {
-            /* This rule is overridden by JS for reliable display, but kept for robustness */
             display: block;
         }
         
@@ -280,8 +279,8 @@
             <figure>
                 <img src="images/ctf_concept.jpg" alt="Illustration of a flag icon inside glowing terminal code." width="600" height="400">
                 <figcaption>A digital illustration representing the goal of a CTF: capturing the flag.</figcaption>
+                <p style="font-style: italic;">AI Image Prompt: "Digital art, dark background, golden flag icon captured inside a stylized terminal interface with glowing green code, high contrast, photorealistic render."</p>
             </figure>
-            <p class="ai-prompt" style="font-style: italic;">AI Image Prompt: "Digital art, dark background, golden flag icon captured inside a stylized terminal interface with glowing green code, high contrast, photorealistic render."</p>
             
             <div class="content-item">
                 <h3>Primary CTF Categories</h3>
@@ -300,14 +299,53 @@
         </section>
 
         <section id="who">
-            <h2>Who: The Participants</h2>
-
-                        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-                    </section>
-                </main>
+            <h2>Who: The Participants and Community</h2>
             
-                <footer>
-                   <p> Page Built <a href="comescoopbychad.com/index.html">By ComeScoopbyChad</a> © 2025 </p>
-                </footer>
-            </body>
-            </html>
+            <div class="content-item">
+                <p>The CTF community is a meritocracy populated by students, professional penetration testers, and dedicated hobbyists. Unlike many traditional competitions, success relies entirely on technical skill and creative problem-solving. Most serious competitors organize into specialized **teams**, which is essential for tackling high-tier, multi-faceted challenges. Teams pool expertise in areas like reverse engineering, cloud security, and cryptography, allowing for efficiency during high-pressure, 48-hour sprints.</p>
+            </div>
+            
+            <div class="content-item">
+                <h3>Join a Team!</h3>
+                <p>Interested in collaborating? Use this form to pitch your specialized skills to potential teammates.</p>
+                <form action="/submit-interest" method="POST">
+                    <label for="name">Your CTF Nickname:</label>
+                    <input type="text" id="name" name="nickname" required>
+                    
+                    <label for="email">Contact Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="skills">Your Primary CTF Skills (e.g., Python, Linux, Web Exploit, Forensics):</label>
+                    <textarea id="skills" name="skills" rows="3" required></textarea>
+                    
+                    <button type="submit">Send Interest</button>
+                </form>
+            </div>
+
+            <figure>
+                <img src="images/hacker_team.jpg" alt="A group of diverse individuals collaborating over laptops in a dark, neon-lit room." width="600" height="400">
+                <figcaption>Collaboration and diverse skill sets are the cornerstones of successful CTF teams.</figcaption>
+                <p style="font-style: italic;">AI Image Prompt: "A group of diverse cybersecurity students intensely collaborating over multiple glowing monitors in a university computer lab late at night, highly focused, academic setting, photorealistic."</p>
+            </figure>
+        </section>
+
+        <section id="when">
+            <h2>When: Event Timing and Dedication</h2>
+            
+            <div class="content-item">
+                <p>The CTF scene is active year-round, but participation is generally categorized by intensity. Most common are **Jeopardy-style online CTFs**, which run for 24-48 hours on weekends. This short timeframe requires intense focus and often necessitates pulling an "all-nighter." The major "season" peaks in the fall and spring semesters, driven by university and industry events like **PicoCTF** and regional college leagues. For sustained learning, platforms like TryHackMe and Hack The Box offer long-term, self-paced challenges, allowing for flexibility outside of competition windows.</p>
+            </div>
+            
+            <div class="content-item">
+                <h3>Key Annual CTF Events</h3>
+                <ul>
+                    <li>**Defcon CTF Qualifiers:** Typically held in the spring, leading up to the final stage in August.</li>
+                    <li>**PicoCTF:** Hosted yearly in the fall, aimed primarily at beginners and students.</li>
+                    <li>**Google CTF:** An advanced, annual event that attracts top global teams.</li>
+                    <li>**Local Competitions:** Many regional security conferences (like ShmooCon or local BSides) host live, one-day competitions throughout the year.</li>
+                </ul>
+            </div>
+
+            <figure>
+                <img src="images/ctf_schedule.jpg" alt="A calendar highlighting weekend dates with digital security icons." width="600" height="400">
+            <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
