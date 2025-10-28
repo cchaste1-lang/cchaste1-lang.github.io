@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction Form</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <script src="scripts/introduction.js" defer></script>
+</head>
+<body>
+    <header id="site-header"></header>
+
+    <main>
+        <h2>Introduction Form</h2>
+        <hr>
+        <h3>Please submit the form below.</h3>
+
+        <form id="intro-form">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="first-name">First Name: *</label>
+                <input type="text" id="first-name" name="firstName" value="Your First Name" placeholder="e.g., Jane" required><br><br>
+
+                <label for="middle-name">Middle Name (or Initial):</label>
+                <input type="text" id="middle-name" name="middleName" value="Your Middle Initial" placeholder="e.g., A"><br><br>
+
+                <label for="nickname">Nickname/Preferred Name:</label>
+                <input type="text" id="nickname" name="nickname" value="Your Nickname" placeholder="e.g., Jen"><br><br>
+
+                <label for="last-name">Last Name: *</label>
+                <input type="text" id="last-name" name="lastName" value="Your Last Name" placeholder="e.g., Doe" required><br><br>
+
+                <label for="acknowledgment">Acknowledgment Statement: *</label>
+                <textarea id="acknowledgment" name="acknowledgment" rows="4" cols="50" required>Your Acknowledgement Statement here.</textarea><br><br>
+
+                <label for="ack-date">Acknowledgment Date: *</label>
+                <input type="date" id="ack-date" name="ackDate" value="2025-10-27" required><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Mascot Details</legend>
+                <label for="mascot-adj">Mascot Adjective: *</label>
+                <input type="text" id="mascot-adj" name="mascotAdj" value="Your Mascot Adjective" placeholder="e.g., Speedy" required><br><br>
+
+                <label for="mascot-animal">Mascot Animal: *</label>
+                <input type="text" id="mascot-animal" name="mascotAnimal" value="Your Mascot Animal" placeholder="e.g., Turtle" required><br><br>
+
+                <label for="divider">Divider (~, |, ♥️, etc): *</label>
+                <input type="text" id="divider" name="divider" value="♥️" placeholder="e.g., ~" required><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Picture Details</legend>
+                <label for="picture-file">Upload Picture: *</label>
+                <input type="file" id="picture-file" name="pictureFile" accept="image/*" required><br>
+                <small>NOTE: This field does not use a `value` for prefilling due to security restrictions, but the *logic* in JS will use your default image if no file is selected. For the assignment, we'll focus on handling the upload via JS and defaulting to your static image.</small><br><br>
+
+                <label for="picture-caption">Picture Caption: *</label>
+                <input type="text" id="picture-caption" name="pictureCaption" value="Your Picture Caption" placeholder="e.g., Me at the beach" required><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Statements and Background</legend>
+                <label for="personal-statement">Personal Statement: *</label>
+                <textarea id="personal-statement" name="personalStatement" rows="6" cols="50" required>Your main personal statement.</textarea><br><br>
+
+                <h4>7 Main Bullets: *</h4>
+                <ol>
+                    <li><input type="text" name="bullet1" value="Personal Background" required placeholder="Personal Background"></li>
+                    <li><input type="text" name="bullet2" value="Professional Background" required placeholder="Professional Background"></li>
+                    <li><input type="text" name="bullet3" value="Academic Background" required placeholder="Academic Background"></li>
+                    <li><input type="text" name="bullet4" value="Web Development Interests" required placeholder="Web Development Interests"></li>
+                    <li><input type="text" name="bullet5" value="Course Goals" required placeholder="Course Goals"></li>
+                    <li><input type="text" name="bullet6" value="Something Unique" required placeholder="Something Unique"></li>
+                    <li><input type="text" name="bullet7" value="Future Plans" required placeholder="Future Plans"></li>
+                </ol>
+            </fieldset>
+
+            <fieldset>
+                <legend>Course Information</legend>
+                <div id="courses-container">
+                    <div class="course-group">
+                        <h4>Course 1: *</h4>
+                        <label for="course-dept-1">Dept: </label>
+                        <input type="text" id="course-dept-1" name="courseDept1" value="ITIS" placeholder="e.g., ITIS" required size="5">
+                        <label for="course-num-1">Number: </label>
+                        <input type="text" id="course-num-1" name="courseNum1" value="3135" placeholder="e.g., 3135" required size="5">
+                        <label for="course-name-1">Name: </label>
+                        <input type="text" id="course-name-1" name="courseName1" value="Web Application Development" placeholder="e.g., Web Application Development" required size="30">
+                        <label for="course-reason-1">Reason: </label>
+                        <input type="text" id="course-reason-1" name="courseReason1" value="It's required." placeholder="e.g., It's required." required size="30">
+                    </div>
+                </div>
+                <button type="button" id="add-course-btn">Add Another Course</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Quote and Shareables</legend>
+                <label for="quote">Favorite Quote: *</label>
+                <textarea id="quote" name="quote" rows="3" cols="50" required>A great quote goes here.</textarea><br><br>
+
+                <label for="quote-author">Quote Author: *</label>
+                <input type="text" id="quote-author" name="quoteAuthor" value="The Author" placeholder="e.g., Albert Einstein" required><br><br>
+
+                <label for="funny-thing">Funny Thing (optional):</label>
+                <input type="text" id="funny-thing" name="funnyThing" value="Something funny." placeholder="e.g., Why did the chicken..."><br><br>
+
+                <label for="to-share">Something I would like to share (optional):</label>
+                <textarea id="to-share" name="toShare" rows="4" cols="50">Something to share.</textarea><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>5 Links (URLs)</legend>
+                <label for="link1">Link 1 (LinkedIn, etc): *</label>
+                <input type="url" id="link1" name="link1" value="https://linkedin.com/in/yourid" placeholder="https://..." required><br><br>
+                <label for="link2">Link 2: *</label>
+                <input type="url" id="link2" name="link2" value="https://github.com/yourid" placeholder="https://..." required><br><br>
+                <label for="link3">Link 3: *</label>
+                <input type="url" id="link3" name="link3" value="https://example.com/3" placeholder="https://..." required><br><br>
+                <label for="link4">Link 4: *</label>
+                <input type="url" id="link4" name="link4" value="https://example.com/4" placeholder="https://..." required><br><br>
+                <label for="link5">Link 5: *</label>
+                <input type="url" id="link5" name="link5" value="https://example.com/5" placeholder="https://..." required><br><br>
+            </fieldset>
+
+            <div class="control-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <button type="button" id="clear-form-btn">Clear</button>
+            </div>
+        </form>
+    </main>
+
+    <footer id="site-footer"></footer>
+</body>
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</html>
