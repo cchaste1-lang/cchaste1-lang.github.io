@@ -1,11 +1,11 @@
 // Function to load Header and Footer (required by instructions for navigation)
 function loadHTML(id, url) {
     fetch(url)
-        .then(response => response.text())
-        .then(data => {
+        .then((response) => response.text())
+        .then((data) => {
             document.getElementById(id).innerHTML = data;
         })
-        .catch(error => console.error('Error loading HTML:', error));
+        .catch((error) => console.error('Error loading HTML:', error));
 }
 
 // Load the header and footer (assuming the files are in the root or a 'parts' folder)
@@ -19,35 +19,6 @@ const coursesContainer = document.getElementById("courses-container");
 const addCourseBtn = document.getElementById("add-course-btn");
 const clearButton = document.getElementById("clear-form-btn");
 let courseCount = 1; // Tracks number of courses, starting at 1
-
-// Function to reset the form (built into the HTML 'reset' button, but good to have a JS function)
-function resetForm() {
-    formElement.reset();
-    // Recreate the course inputs to the default of 1
-    coursesContainer.innerHTML = '';
-    courseCount = 1;
-    addCourseGroup(true); // Add the first default course
-}
-
-// Function to clear all fields (required functionality for the 'Clear' button)
-function clearAllFields() {
-    // Reset the form first to clear all standard fields and their values
-    formElement.reset(); 
-    
-    // Clear the course container and add back a blank single course
-    coursesContainer.innerHTML = '';
-    courseCount = 1;
-    addCourseGroup(false); // Add a single blank course group
-    
-    // The reset() call should handle most fields, but we add the logic here 
-    // for future proofing if custom elements were used.
-    Array.from(formElement.querySelectorAll("input, textarea")).forEach((input) => {
-        // Only clear fields that don't have a file type, as clearing a file input is tricky/forbidden
-        if (input.type !== 'file') {
-             input.value = "";
-        }
-    });
-}
 
 // --- Course Adding/Deleting Functionality ---
 
@@ -82,6 +53,35 @@ function addCourseGroup(useDefaultValues = false) {
     `;
 
     coursesContainer.appendChild(div);
+}
+
+// Function to reset the form (built into the HTML 'reset' button, but good to have a JS function)
+function resetForm() {
+    formElement.reset();
+    // Recreate the course inputs to the default of 1
+    coursesContainer.innerHTML = '';
+    courseCount = 1;
+    addCourseGroup(true); // Add the first default course
+}
+
+// Function to clear all fields (required functionality for the 'Clear' button)
+function clearAllFields() {
+    // Reset the form first to clear all standard fields and their values
+    formElement.reset(); 
+    
+    // Clear the course container and add back a blank single course
+    coursesContainer.innerHTML = '';
+    courseCount = 1;
+    addCourseGroup(false); // Add a single blank course group
+    
+    // The reset() call should handle most fields, but we add the logic here 
+    // for future proofing if custom elements were used.
+    Array.from(formElement.querySelectorAll("input, textarea")).forEach((input) => {
+        // Only clear fields that don't have a file type, as clearing a file input is tricky/forbidden
+        if (input.type !== 'file') {
+             input.value = "";
+        }
+    });
 }
 
 // Listener for the "Add Another Course" button
@@ -136,7 +136,7 @@ formElement.addEventListener("submit", function (e) {
     // Extract all courses dynamically
     const courses = [];
     const courseGroups = coursesContainer.querySelectorAll('.course-group');
-    courseGroups.forEach((group, index) => {
+    courseGroups.forEach((_, index) => {
         const courseData = {
             dept: formData.get(`courseDept${index + 1}`),
             num: formData.get(`courseNum${index + 1}`),
@@ -150,12 +150,12 @@ formElement.addEventListener("submit", function (e) {
     });
     
     // 4. Generate the new page content HTML
-    let courseListHTML = courses.map(c => 
+    let courseListHTML = courses.map((c) => 
         `<li><b>${c.dept} ${c.num} - ${c.name}:</b> ${c.reason}</li>`
     ).join('');
 
     let linksListHTML = '';
-    for(let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         const url = data[`link${i}`];
         if (url) {
             linksListHTML += `<li><a href="${url}" target="_blank">${url}</a></li>`;
@@ -177,7 +177,7 @@ formElement.addEventListener("submit", function (e) {
                 <hr>
                 
                 <p>
-                    <strong>I, ${data.firstName} ${data.lastName}, acknowledge that I will comply with the terms of the UNC Charlotte Code of Academic Integrity. I understand that violations of the Code of Academic Integrity, including but not limited to, plagiarism, cheating, or misrepresentation of academic work, will result in disciplinary action.</strong>
+                    <strong>I, ${fullName}, acknowledge that I will comply with the terms of the UNC Charlotte Code of Academic Integrity. I understand that violations of the Code of Academic Integrity, including but not limited to, plagiarism, cheating, or misrepresentation of academic work, will result in disciplinary action.</strong>
                 </p>
                 <p><strong>Date: ${data.ackDate}</strong></p>
                 <hr>

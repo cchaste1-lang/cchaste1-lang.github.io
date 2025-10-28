@@ -34,7 +34,7 @@
                 <textarea id="acknowledgment" name="acknowledgment" rows="4" cols="50" required>Your Acknowledgement Statement here.</textarea><br><br>
 
                 <label for="ack-date">Acknowledgment Date: *</label>
-                <input type="date" id="ack-date" name="ackDate" value="2025-10-27" required><br><br>
+                <input type="text" id="ack-date" name="ackDate" value="2025-10-27" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" required><br><br>
             </fieldset>
 
             <fieldset>
@@ -132,6 +132,28 @@
     </main>
 
     <footer id="site-footer"></footer>
+    <script>
+    // Enhance the ack-date input: keep it as text for max compatibility, but switch to type="date" when the browser supports it.
+    (function() {
+        var input = document.getElementById('ack-date');
+        if (!input) return;
+        var test = document.createElement('input');
+        test.type = 'date';
+        var supported = test.type === 'date';
+        if (supported) {
+            // Use the native date picker when available
+            input.type = 'date';
+            // Ensure value conforms to YYYY-MM-DD or clear it so the native picker starts empty
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(input.value)) {
+                input.value = '';
+            }
+        } else {
+            // Keep the text input with guidance and a pattern for validation
+            input.placeholder = 'YYYY-MM-DD';
+            input.pattern = '\\d{4}-\\d{2}-\\d{2}';
+        }
+    })();
+    </script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </body>
-<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </html>
