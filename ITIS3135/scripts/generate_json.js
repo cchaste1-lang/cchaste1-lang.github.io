@@ -1,12 +1,10 @@
-// generate_json.js
-
-// Helper function to safely get the value of an element by ID
-const getValue = (id) => {
-    const element = document.getElementById(id);
-    return element ? element.value.trim() : '';
-};
-
 document.addEventListener('DOMContentLoaded', () => {
+    // Helper function to safely get the value of an element by ID
+    const getValue = (id) => {
+        const element = document.getElementById(id);
+        return element ? element.value.trim() : '';
+    };
+
     // Attach the event listener to the new button
     const generateButton = document.getElementById('generateJsonButton');
     if (generateButton) {
@@ -17,17 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function generateJson() {
     // 1. Gather all data into a JavaScript object based on the required JSON keys
     const dataObject = {
-        // --- Personal Information (Matching JSON Keys to your Form IDs) ---
         "firstName": getValue('first-name'),
         "preferredName": getValue('nickname'),
-        "middleInitial": getValue('middle-name'), // Using middle-name for middleInitial key
+        "middleInitial": getValue('middle-name'), // Note: Used middle-name field for middleInitial key
         "lastName": getValue('last-name'),
         "divider": getValue('divider'),
         "mascotAdjective": getValue('mascot-adj'),
         "mascotAnimal": getValue('mascot-animal'),
-        
-        // --- Image and Background ---
-        "image": getValue('image-path'), // Uses the static image-path field we added
+        "image": getValue('image-path'), // Uses the static path field
         "imageCaption": getValue('picture-caption'),
         "personalStatement": getValue('personal-statement'),
         
@@ -35,25 +30,16 @@ function generateJson() {
         "personalBackground": getValue('personal-background'),
         "professionalBackground": getValue('professional-background'),
         "academicBackground": getValue('academic-background'),
+        // Combine the last 4 into 'subjectBackground' or just take the first one that matches the old key
+        "subjectBackground": getValue('subject-background-1'), // Taking the first 'Web Development Interests'
         
-        // **IMPORTANT:** Since the required JSON has only 5 bullet keys, 
-        // we combine the content of the remaining 4 fields into 'subjectBackground'
-        "subjectBackground": [
-            getValue('subject-background-1'),
-            getValue('subject-background-2'),
-            getValue('subject-background-3'),
-            getValue('subject-background-4')
-        ].filter(Boolean).join(' | '), // Joins the 4 bullets with a separator
-        
-        "primaryComputer": getValue('primary-computer'), // New field added to HTML
-        
-        // --- Array Data ---
+        "primaryComputer": getValue('primary-computer'),
         "courses": getCourseData(),
         "links": getLinkData()
     };
 
     // 2. Convert the JavaScript object to a formatted JSON string
-    // The 'null, 2' arguments ensure the output is nicely indented with 2 spaces.
+    // The 'null, 2' argument ensures the output is nicely indented with 2 spaces.
     const jsonString = JSON.stringify(dataObject, null, 2);
 
     // 3. Update the H2 heading
@@ -95,25 +81,24 @@ function generateJson() {
     }
 }
 
-// --- Helper Functions to Extract Array Data (using classes defined in HTML) ---
+// --- Helper Functions to Extract Array Data ---
 
 /**
  * Reads all course groups and extracts the data into an array of objects.
  */
 function getCourseData() {
     const courses = [];
-    // Select all course groups (using the .course-group class)
-    const courseGroups = document.querySelectorAll('#courses-container .course-group');
+    // Select all course groups (assuming you're using class names for easy selection)
+    const courseGroups = document.querySelectorAll('.course-group');
 
     courseGroups.forEach(group => {
-        // Use querySelector on the group to find the specific inputs within that group
         const dept = group.querySelector('.course-dept')?.value.trim() || '';
         const num = group.querySelector('.course-num')?.value.trim() || '';
         const name = group.querySelector('.course-name')?.value.trim() || '';
         const reason = group.querySelector('.course-reason')?.value.trim() || '';
 
-        // Only add the course if the department and number are not empty
-        if (dept && num) {
+        // Only add the course if the department is not empty (ensures partial/empty rows are ignored)
+        if (dept) {
             courses.push({
                 "department": dept,
                 "number": num,
@@ -149,3 +134,7 @@ function getLinkData() {
 
     return links;
 }
+
+// NOTE: You will need to implement the 'Add Another Course' functionality 
+// in your existing 'introduction.js' or directly in the HTML if you want 
+// the user to dynamically add rows before generating the JSON.
