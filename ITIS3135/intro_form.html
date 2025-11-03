@@ -69,6 +69,7 @@
                 <textarea id="personal-statement" name="personalStatement" rows="6" cols="50" required>Your main personal statement.</textarea><br><br>
 
                 <h4>7 Main Bullets (These will map to specific JSON keys): *</h4>
+                <ol>
                 <li><input type="text" id="personal-background" name="bullet1" value="My Personal Background" required placeholder="Personal Background"></li>
                 <li><input type="text" id="professional-background" name="bullet2" value="My Professional Background" required placeholder="Professional Background"></li>
                 <li><input type="text" id="academic-background" name="bullet3" value="My Academic Background" required placeholder="Academic Background"></li>
@@ -76,26 +77,24 @@
                 <li><input type="text" id="subject-background-2" name="bullet5" value="Course Goals" required placeholder="Course Goals"></li>
                 <li><input type="text" id="subject-background-3" name="bullet6" value="Something Unique" required placeholder="Something Unique"></li>
                 <li><input type="text" id="subject-background-4" name="bullet7" value="Future Plans" required placeholder="Future Plans"></li>
-            </ol>
+                </ol>
             <label for="primary-computer">Primary Computer: *</label>
             <input type="text" id="primary-computer" name="primaryComputer" value="A custom-built Windows PC." placeholder="e.g., Macbook Pro M2" required><br><br>
             </fieldset>
 
             <fieldset>
                 <legend>Course Information</legend>
-                <div id="courses-container">
                     <div class="course-group" data-course-index="1">
                         <h4>Course 1: *</h4>
                         <label for="course-dept-1">Dept: </label>
-                        <input type="text" class="course-dept" name="courseDept1" value="ITIS" placeholder="e.g., ITIS" required size="5">
+                        <input id="course-dept-1" type="text" class="course-dept" name="courseDept1" value="ITIS" placeholder="e.g., ITIS" required size="5">
                         <label for="course-num-1">Number: </label>
-                        <input type="text" class="course-num" name="courseNum1" value="3135" placeholder="e.g., 3135" required size="5">
+                        <input id="course-num-1" type="text" class="course-num" name="courseNum1" value="3135" placeholder="e.g., 3135" required size="5">
                         <label for="course-name-1">Name: </label>
-                        <input type="text" class="course-name" name="courseName1" value="Web Application Development" placeholder="e.g., Web Application Development" required size="30">
+                        <input id="course-name-1" type="text" class="course-name" name="courseName1" value="Web Application Development" placeholder="e.g., Web Application Development" required size="30">
                         <label for="course-reason-1">Reason: </label>
-                        <input type="text" class="course-reason" name="courseReason1" value="It's required." placeholder="e.g., It's required." required size="30">
+                        <input id="course-reason-1" type="text" class="course-reason" name="courseReason1" value="It's required." placeholder="e.g., It's required." required size="30">
                     </div>
-                </div>
                 <button type="button" id="add-course-btn">Add Another Course</button>
                 <small>NOTE: Please add at least **7 courses** to match the example JSON structure.</small>
             </fieldset>

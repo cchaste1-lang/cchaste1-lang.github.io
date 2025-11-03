@@ -6,13 +6,66 @@ const getValue = (id) => {
     return element ? element.value.trim() : '';
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Attach the event listener to the new button
-    const generateButton = document.getElementById('generateJsonButton');
-    if (generateButton) {
-        generateButton.addEventListener('click', generateJson);
-    }
-});
+// --- Helper Functions to Extract Array Data (using classes defined in HTML) ---
+
+/**
+ * Reads all course groups and extracts the data into an array of objects.
+ */
+function getCourseData() {
+    const courses = [];
+    // Select all course groups (using the .course-group class)
+    const courseGroups = document.querySelectorAll('#courses-container .course-group');
+
+    courseGroups.forEach((group) => {
+        // Use querySelector on the group to find the specific inputs within that group
+        const deptEl = group.querySelector('.course-dept');
+        const dept = deptEl ? deptEl.value.trim() : '';
+        const numEl = group.querySelector('.course-num');
+        const num = numEl ? numEl.value.trim() : '';
+        const nameEl = group.querySelector('.course-name');
+        const name = nameEl ? nameEl.value.trim() : '';
+        const reasonEl = group.querySelector('.course-reason');
+        const reason = reasonEl ? reasonEl.value.trim() : '';
+
+        // Only add the course if the department and number are not empty
+        if (dept && num) {
+            courses.push({
+                "department": dept,
+                "number": num,
+                "name": name,
+                "reason": reason
+            });
+        }
+    });
+
+    return courses;
+}
+
+/**
+ * Reads all link groups and extracts the name and href into an array of objects.
+ */
+function getLinkData() {
+    const links = [];
+    // Select all link groups
+    const linkGroups = document.querySelectorAll('.link-group');
+
+    linkGroups.forEach((group) => {
+        const nameEl = group.querySelector('.link-name');
+        const name = nameEl ? nameEl.value.trim() : '';
+        const hrefEl = group.querySelector('.link-href');
+        const href = hrefEl ? hrefEl.value.trim() : '';
+
+        // Only add the link if both name and href are present
+        if (name && href) {
+            links.push({
+                "name": name,
+                "href": href
+            });
+        }
+    });
+
+    return links;
+}
 
 function generateJson() {
     // 1. Gather all data into a JavaScript object based on the required JSON keys
@@ -95,57 +148,10 @@ function generateJson() {
     }
 }
 
-// --- Helper Functions to Extract Array Data (using classes defined in HTML) ---
-
-/**
- * Reads all course groups and extracts the data into an array of objects.
- */
-function getCourseData() {
-    const courses = [];
-    // Select all course groups (using the .course-group class)
-    const courseGroups = document.querySelectorAll('#courses-container .course-group');
-
-    courseGroups.forEach(group => {
-        // Use querySelector on the group to find the specific inputs within that group
-        const dept = group.querySelector('.course-dept')?.value.trim() || '';
-        const num = group.querySelector('.course-num')?.value.trim() || '';
-        const name = group.querySelector('.course-name')?.value.trim() || '';
-        const reason = group.querySelector('.course-reason')?.value.trim() || '';
-
-        // Only add the course if the department and number are not empty
-        if (dept && num) {
-            courses.push({
-                "department": dept,
-                "number": num,
-                "name": name,
-                "reason": reason
-            });
-        }
-    });
-
-    return courses;
-}
-
-/**
- * Reads all link groups and extracts the name and href into an array of objects.
- */
-function getLinkData() {
-    const links = [];
-    // Select all link groups
-    const linkGroups = document.querySelectorAll('.link-group');
-
-    linkGroups.forEach(group => {
-        const name = group.querySelector('.link-name')?.value.trim() || '';
-        const href = group.querySelector('.link-href')?.value.trim() || '';
-
-        // Only add the link if both name and href are present
-        if (name && href) {
-            links.push({
-                "name": name,
-                "href": href
-            });
-        }
-    });
-
-    return links;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // Attach the event listener to the new button
+    const generateButton = document.getElementById('generateJsonButton');
+    if (generateButton) {
+        generateButton.addEventListener('click', generateJson);
+    }
+});

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Project - Requirements & Design Proposal</title>
+    <!-- Link to your default stylesheet -->
+    <link rel="stylesheet" href="default.css">
+    <!-- Using the Inter font, defined in the CSS -->
+</head>
+<body>
+
+    <!-- I. SITE-WIDE HEADER (Component) -->
+    <header>
+        <h1>My Class Portfolio</h1> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="assignment-2.html">Assignment 2</a></li>
+                <!-- Link for THIS PAGE -->
+                <li><a href="project_overview.html" class="active">Project Overview</a></li>
+                <li><a href="other-page.html">Other Page</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- II. MAIN CONTENT AREA -->
+    <main>
+        <!-- Page-Specific Header -->
+        <h2>Project Requirements & Design Proposal Webpage</h2>
+
+        <!-- 1. PROJECT OVERVIEW -->
+        <section id="project-overview">
+            <h3>&#128187; Project Overview: The UNCC HCI Interact Project Hub</h3>
+            
+            <h4>&#128220; Application and Purpose</h4>
+            <p>The web application, The UNCC HCI Interact Project Hub, is designed for the HCI Interact student group at UNC Charlotte. Its primary purpose is to serve as a centralized, dynamic platform to showcase past and ongoing student projects, provide essential information about the group, and encourage engagement and recruitment of new members. The site will improve the group's visibility within the university and serve as a portfolio for the students involved.</p>
+            
+            <h4>&#128100; Intended Users of the Website</h4>
+            <ul>
+                <li>Current HCI Interact Members: For referencing group information and project templates.</li>
+                <li>Prospective UNCC Students (Undergraduate and Graduate): Seeking student organizations and viewing examples of the group's work.</li>
+                <li>UNCC Faculty and External Industry Professionals: Visiting to view student portfolios, find collaborators, or recruit interns.</li>
+            </ul>
+
+            <h4>&#128240; Overview of the Content of the Website</h4>
+            <ul>
+                <li>About Us: Group mission, history, and executive board member profiles.</li>
+                <li>Projects: Detailed case studies of past and current projects.</li>
+                <li>Events: A dynamic calendar or list of upcoming meetings, workshops, and social events.</li>
+                <li>Resources: Links to relevant academic papers, design tools, and external HCI-related websites.</li>
+                <li>Join/Contact: A clear call-to-action page with a sign-up form and general contact information.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- 2. CLIENT INFORMATION -->
+        <section id="client-info">
+            <h3>&#128188; Client Information</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Name of the Client</td><td>[private] (e.g., Jane Doe)</td></tr>
+                    <tr><td>Organization/Institute/Business</td><td>HCI Interact Student Group, UNC Charlotte</td></tr>
+                    <tr><td>Client's Valid Email Address</td><td>[private]</td></tr>
+                    <tr><td>Client's Phone Number</td><td>[private] (N/A)</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- 3. WIREFRAME & SITE MAP (Visuals) -->
+        <section id="design-visuals">
+            
+            <h3>&#128396; Wireframe (Default Page Design)</h3>
+            <p>Link to Wireframe: [Insert URL to Draw.io Wireframe Share Link]</p>
+            <figure>
+                <!-- NOTE: Replace with a placeholder image or a simple description -->
+                <img src="https://placehold.co/800x450/003366/ffffff?text=Wireframe+Mockup" alt="Wireframe for the Home Page layout"> 
+                <figcaption>Figure 1: Wireframe Mockup for the Home Page (index.html) showing header, hero section, and content blocks.</figcaption>
+            </figure>
+
+            <h3 style="margin-top: 2em;">&#128450; Site Map</h3>
+            <p>Link to Site Map: [Insert URL to Draw.io Site Map Share Link]</p>
+            <figure>
+                <!-- NOTE: Replace with a placeholder image or a simple description -->
+                <img src="https://placehold.co/800x450/FFC72C/003366?text=Site+Map" alt="Site map showing the five main pages and navigation"> 
+                <figcaption>Figure 2: Site Map for the HCI Interact Project Hub, showing navigation between Home, About Us, Projects, Events, and Join/Contact.</figcaption>
+            </figure>
+
+        </section>
+
+        <hr>
+
+        <!-- 4. PAGE DESIGN DETAILS -->
+        <section id="page-design">
+            <h3>&#128203; Page Design (Detailed Requirements for Each Page)</h3>
+
+            <!-- 4.1 Home Page -->
+            <div class="page-details">
+                <h4>1. Home Page (*index.html*)</h4>
+                <ul>
+                    <li>Purpose: Provide an engaging introduction and direct users to key content.</li>
+                    <li>Audience: All users.</li>
+                    <li>Content: Hero section, mission statement, dynamically loaded featured projects.</li>
+                    <li>Data Entry/Validation: No data entry fields.</li>
+                    <li>Buttons/Hyperlinks/Drop Downs: Buttons for "View Projects" and "Join Now."</li>
+                    <li>Actions: Dynamic loading of featured projects via AJAX on page load.</li>
+                </ul>
+            </div>
+            
+            <!-- 4.2 About Us -->
+            <div class="page-details">
+                <h4>2. About Us (*about.html*)</h4>
+                <ul>
+                    <li>Purpose: Detail the group's history, mission, and introduce the leadership team.</li>
+                    <li>Audience: All users, especially Prospective Students.</li>
+                    <li>Content: Textual history, executive board member images/profiles.</li>
+                    <li>Data Entry/Validation: No data entry fields.</li>
+                    <li>Buttons/Hyperlinks/Drop Downs: Hyperlinks to external professional profiles (e.g., LinkedIn).</li>
+                    <li>Actions: Basic navigation and link clicks.</li>
+                </ul>
+            </div>
+
+            <!-- 4.3 Projects Page -->
+            <div class="page-details">
+                <h4>3. Projects (*projects.html*)</h4>
+                <ul>
+                    <li>Purpose: Serve as the main portfolio and gallery of student work.</li>
+                    <li>Audience: Prospective Students and Industry Professionals.</li>
+                    <li>Content: Grid of project cards with images, short descriptions, and filtering options.</li>
+                    <li>Data Entry/Validation: No data entry fields.</li>
+                    <li>Buttons/Hyperlinks/Drop Downs: Dropdown/select list for filtering by project category (e.g., UX, Dev, Research).</li>
+                    <li>Actions: Filtering/Sorting of project cards using JavaScript/jQuery. Navigation to Project Detail page upon click.</li>
+                </ul>
+            </div>
+            
+            <!-- 4.4 Events Page -->
+            <div class="page-details">
+                <h4>4. Events (*events.html*)</h4>
+                <ul>
+                    <li>Purpose: Display a clear, organized timeline of all upcoming group events and meetings.</li>
+                    <li>Audience: Current Members and Prospective Students.</li>
+                    <li>Content: Event titles, dates, times, and descriptions.</li>
+                    <li>Data Entry/Validation: No data entry fields.</li>
+                    <li>Buttons/Hyperlinks/Drop Downs: None (information presentation only).</li>
+                    <li>Actions: Display of event details using a jQuery-UI Accordion widget.</li>
+                </ul>
+            </div>
+
+            <!-- 4.5 Join/Contact Page -->
+            <div class="page-details">
+                <h4>5. Join/Contact (*contact.html*)</h4>
+                <ul>
+                    <li>Purpose: Collect information from prospective members and provide formal contact details.</li>
+                    <li>Audience: Prospective Students and external contacts.</li>
+                    <li>Content: A sign-up form, general contact email, and embedded Google Map.</li>
+                    <li>Data Entry/Validation: Name, Email (required, validation), Student ID, Interest Area, Message. All fields require client-side validation.</li>
+                    <li>Buttons/Hyperlinks/Drop Downs: Submit button and Interest Area dropdown.</li>
+                    <li>Actions: Form submission simulation (since CRUD is restricted) after successful client-side validation.</li>
+                </ul>
+            </div>
+
+            <!-- Project Detail Template (Non-main page, for context) -->
+            <div class="page-details">
+                <h4>Project Detail Page (Template)</h4>
+                <p><strong>Special Note:</strong> This template dynamically loads content after clicking a project on the Projects page. It features an in-depth case study, team member credits, process breakdown, and a modal image gallery (lightbox effect).</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 5. DYNAMIC FUNCTIONALITY -->
+        <section id="dynamic-functionality">
+            <h3>&#128161; Dynamic Functionality Implementation</h3>
+
+            <div class="dynamic-feature">
+                <h4>1. AJAX-powered Featured Project Loader</h4>
+                <ul>
+                    <li>Page: Home Page (*index.html*)</li>
+                    <li>Purpose: Loads a curated list of featured projects dynamically upon page load, improving performance and keeping content fresh.</li>
+                    <li>Example URL: <a href="https://www.nytimes.com" target="_blank">The New York Times</a> (Observing articles load as you scroll down)</li>
+                </ul>
+            </div>
+            
+            <div class="dynamic-feature">
+                <h4>2. jQuery-UI Accordion Widget for Events</h4>
+                <ul>
+                    <li>Page: Events (*events.html*)</li>
+                    <li>Purpose: Organizes the event list into collapsible sections, preventing the page from becoming visually overwhelming.</li>
+                    <li>Example URL: <a href="https://jqueryui.com/accordion/" target="_blank">jQuery UI Accordion Demo</a></li>
+                </ul>
+            </div>
+
+            <div class="dynamic-feature">
+                <h4>3. Interactive Project Gallery & Filtering</h4>
+                <ul>
+                    <li>Page: Projects (*projects.html*)</li>
+                    <li>Purpose: Allows users to smoothly filter the project card grid based on a dropdown selection (e.g., 'Research').</li>
+                    <li>Example URL: <a href="https://dribbble.com/shots/popular/web-design" target="_blank">Dribbble Portfolio</a> (Observe the quick filtering options)</li>
+                </ul>
+            </div>
+            
+            <div class="dynamic-feature">
+                <h4>4. Client-Side Form Validation</h4>
+                <ul>
+                    <li>Page: Join/Contact (*contact.html*)</li>
+                    <li>Purpose: Provides immediate feedback on the sign-up form to ensure all mandatory fields (especially Email format) are correctly filled.</li>
+                    <li>Example URL: <a href="https://www.linkedin.com/signup" target="_blank">LinkedIn Sign-Up Page</a> (Shows real-time validation errors)</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 6. AUTHOR & REFERENCE NOTES (Required in the text area submission) -->
+        <section id="notes-references">
+            <h3>&#9999;&#65039; Author & Reference Notes</h3>
+            <p>This document utilizes standard web development conventions and semantic HTML5 structure. The design is based on the UNCC HCI Interact group's needs and current best practices for portfolio and informational websites. All client information is marked as private as a best practice.</p>
+            
+            <ul>
+                <li>Name: [Your Name]</li>
+                <li>Date: [Insert Date and Time Here]</li>
+                <li>Referenced Sites/Tools: Draw.io (for visuals), jQuery UI (for event widget).</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- III. SITE-WIDE FOOTER (Component) -->
+    <footer>
+        <p>&copy; 2025 comescoopbychad | All Rights Reserved.</p>
+        <!-- REQUIRED VALIDATION LINKS -->
+        <p>
+            <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">Validate HTML</a> | 
+            <a href="https://jigsaw.w3.org/css-validator/validator" target="_blank" rel="noopener noreferrer">Validate CSS</a>
+        </p>
+    </footer>
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</body>
+</html>

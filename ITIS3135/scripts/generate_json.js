@@ -1,16 +1,67 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Helper function to safely get the value of an element by ID
-    const getValue = (id) => {
-        const element = document.getElementById(id);
-        return element ? element.value.trim() : '';
-    };
+// Helper function to safely get the value of an element by ID
+function getValue(id) {
+    const element = document.getElementById(id);
+    return element ? element.value.trim() : '';
+}
 
-    // Attach the event listener to the new button
-    const generateButton = document.getElementById('generateJsonButton');
-    if (generateButton) {
-        generateButton.addEventListener('click', generateJson);
-    }
-});
+ // --- Helper Functions to Extract Array Data ---
+
+/**
+ * Reads all course groups and extracts the data into an array of objects.
+ */
+function getCourseData() {
+    const courses = [];
+    // Select all course groups (assuming you're using class names for easy selection)
+    const courseGroups = document.querySelectorAll('.course-group');
+
+    courseGroups.forEach((group) => {
+        const deptEl = group.querySelector('.course-dept');
+        const numEl = group.querySelector('.course-num');
+        const nameEl = group.querySelector('.course-name');
+        const reasonEl = group.querySelector('.course-reason');
+
+        const dept = deptEl && deptEl.value ? deptEl.value.trim() : '';
+        const num = numEl && numEl.value ? numEl.value.trim() : '';
+        const name = nameEl && nameEl.value ? nameEl.value.trim() : '';
+        const reason = reasonEl && reasonEl.value ? reasonEl.value.trim() : '';
+
+        // Only add the course if the department is not empty (ensures partial/empty rows are ignored)
+        if (dept) {
+            courses.push({
+                "department": dept,
+                "number": num,
+                "name": name,
+                "reason": reason
+            });
+        }
+    });
+
+    return courses;
+}
+
+function getLinkData() {
+    const links = [];
+    // Select all link groups
+    const linkGroups = document.querySelectorAll('.link-group');
+
+    linkGroups.forEach((group) => {
+        const nameEl = group.querySelector('.link-name');
+        const hrefEl = group.querySelector('.link-href');
+
+        const name = nameEl && nameEl.value ? nameEl.value.trim() : '';
+        const href = hrefEl && hrefEl.value ? hrefEl.value.trim() : '';
+
+        // Only add the link if both name and href are present
+        if (name && href) {
+            links.push({
+                "name": name,
+                "href": href
+            });
+        }
+    });
+
+    return links;
+}
 
 function generateJson() {
     // 1. Gather all data into a JavaScript object based on the required JSON keys
@@ -81,59 +132,13 @@ function generateJson() {
     }
 }
 
-// --- Helper Functions to Extract Array Data ---
-
-/**
- * Reads all course groups and extracts the data into an array of objects.
- */
-function getCourseData() {
-    const courses = [];
-    // Select all course groups (assuming you're using class names for easy selection)
-    const courseGroups = document.querySelectorAll('.course-group');
-
-    courseGroups.forEach(group => {
-        const dept = group.querySelector('.course-dept')?.value.trim() || '';
-        const num = group.querySelector('.course-num')?.value.trim() || '';
-        const name = group.querySelector('.course-name')?.value.trim() || '';
-        const reason = group.querySelector('.course-reason')?.value.trim() || '';
-
-        // Only add the course if the department is not empty (ensures partial/empty rows are ignored)
-        if (dept) {
-            courses.push({
-                "department": dept,
-                "number": num,
-                "name": name,
-                "reason": reason
-            });
-        }
-    });
-
-    return courses;
-}
-
-/**
- * Reads all link groups and extracts the name and href into an array of objects.
- */
-function getLinkData() {
-    const links = [];
-    // Select all link groups
-    const linkGroups = document.querySelectorAll('.link-group');
-
-    linkGroups.forEach(group => {
-        const name = group.querySelector('.link-name')?.value.trim() || '';
-        const href = group.querySelector('.link-href')?.value.trim() || '';
-
-        // Only add the link if both name and href are present
-        if (name && href) {
-            links.push({
-                "name": name,
-                "href": href
-            });
-        }
-    });
-
-    return links;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // Attach the event listener to the new button
+    const generateButton = document.getElementById('generateJsonButton');
+    if (generateButton) {
+        generateButton.addEventListener('click', generateJson);
+    }
+});
 
 // NOTE: You will need to implement the 'Add Another Course' functionality 
 // in your existing 'introduction.js' or directly in the HTML if you want 
