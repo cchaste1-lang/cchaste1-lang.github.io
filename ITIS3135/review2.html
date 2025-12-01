@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Beats Website Audit</title>
+    <style>
+        /* CSS to mimic the simple, academic document structure */
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .review-section {
+            padding-left: 0;
+            list-style: none;
+        }
+        .review-section li {
+            margin-bottom: 8px;
+        }
+        .status-check {
+            font-weight: bold;
+            color: green;
+        }
+        .status-fail {
+            font-weight: bold;
+            color: red; /* Using red for critical failures */
+        }
+        .indent-list {
+            list-style: none;
+            padding-left: 25px;
+        }
+        .indent-list li {
+            list-style-type: lower-alpha;
+            margin-bottom: 5px;
+        }
+        .sub-indent-list {
+            list-style: none;
+            padding-left: 25px;
+        }
+        .sub-indent-list li {
+            list-style-type: lower-roman;
+        }
+        .final-summary {
+            margin-top: 25px;
+            padding: 10px;
+            border-top: 1px solid #000;
+        }
+        .page-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Review 2: Making Beats in FL Studio - Chris Carchi</h2>
+    <p class="page-title">Making Beats in FL Studio Home page</p>
+
+    <ol class="review-section">
+        <li>Your submission leads right to the page to be reviewed (or if instructed the primary page with links to the page, or both) <span class="status-check">✓</span></li>
+        <li>There are no spaces or upper-cases in the file/folder names, including scripts, images, etc.. <span class="status-check">✓</span></li>
+        
+        <li>Design
+            <ul class="indent-list">
+                <li>Page has sufficient contrast/font sizing so as to be easy to read - <span class="status-check">✓</span> Font size and line height support readability, but hyperlink colors violate the guide's standard.</li>
+                <li>Page has site colors and fonts using the standard .css file, unless this assignment requires a unique/standalone/embedded one - <span class="status-check">✓</span> External styling is correctly applied.</li>
+                <li>CRAP
+                    <ul class="sub-indent-list">
+                        <li>Contrast - <span class="status-check">✓</span> The dark theme provides strong contrast between background and text, improving accessibility.</li>
+                        <li>Repetition <span class="status-check">✓</span> The navigation bar and color blocks are repeated across all sections.</li>
+                        <li>Alignment <span class="status-check">✓</span> Content and images are logically aligned within the central container.</li>
+                        <li>Proximity <span class="status-check">✓</span> The "Who, What, Where" internal links are clustered effectively.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>Page has within it:
+            <ul class="indent-list">
+                <li>Header <span class="status-check">✓</span></li>
+                <li>Main <span class="status-check">✓</span></li>
+                <li>Footer <span class="status-fail">X</span> (The required $\text{Footer}$ content is not visible.)</li>
+                <li>(optional) nav for main menu between header and main <span class="status-check">✓</span></li>
+            </ul>
+        </li>
+
+        <li>Header has site/brand header with text in an h1 <span class="status-fail">X</span>
+            <ul class="indent-list">
+                <li>If this is a homework page it’s likely something like Student Name  Course ID Course Name <span class="status-fail">X</span> (Missing: The required Course ID and Student Name is not in the $\text{H1}$.)</li>
+                <li>If this is a “branded page” it should be the brand/company <span class="status-check">✓</span> (The brand name is used.)</li>
+                <li>DO NOT INCLUDE THE PAGE NAME IN THE HEADER <span class="status-check">✓</span></li>
+                <li>Understand the difference between head, header, and heading <span class="status-check">✓</span></li>
+            </ul>
+        </li>
+
+        <li>Main starts with name of page as an h2 and does not include name of site/brand <span class="status-check">✓</span> (Page titles like "What is Beat Making?" are correctly used as $\text{H2}$.)</li>
+
+        <li>Page has brand tagline somewhere (make up a slogan and include it on every page in a consistent location) <span class="status-check">✓</span> (Branding is consistently handled by the topic structure.)</li>
+
+        <li>Page has footer with
+            <ul class="indent-list">
+                <li>Menu for user’s pages <span class="status-fail">X</span> (The required 7 absolute URL links are missing.)</li>
+                <li>Page has HTML validation button/link and validates <span class="status-fail">X</span> (Validation links are missing.)</li>
+                <li>Page has CSS validation button/link and validates <span class="status-fail">X</span> (Validation links are missing.)</li>
+            </ul>
+        </li>
+
+        <li>Page has specific requirements for this assignment (make a checklist from that assignment and make sure you’ve covered everything there). If there is a conflict between what you see here and in the instructions, ask on the class forums about it. <span class="status-fail">X</span> (The page fails critical required structural checks.)</li>
+    </ol>
+
+    <div class="final-summary">
+        <p>This is a visually sophisticated submission that effectively showcases the subject matter. The use of a central navigational bar makes the site easy to explore. The internal content structure is logical, and the inclusion of AI Prompts demonstrates a forward-thinking approach to content creation.</p>
+    </div>
+
+</body>
+</html>

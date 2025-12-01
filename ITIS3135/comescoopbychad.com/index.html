@@ -24,7 +24,7 @@
         }
         .tagline {
             font-style: italic;
-            color: #4f5d75;
+            color: #fff;
             margin-bottom: 1em;
         }
         .brand-graphic {
@@ -62,7 +62,7 @@
     <header>
         <h1>ComeScoopbyChad</h1>
         <div class="tagline">Creative Solutions, Scoop by Scoop</div>
-        <img src="https://cdn.pixabay.com/photo/2017/01/31/13/14/ice-cream-2029626_1280.png" alt="Brand Graphic" class="brand-graphic">
+        <img src="Scoop.png" alt="Logo for ComeScoopbyChad design firm" class="brand-graphic" loading="lazy" width="80" height="80">
     </header>
     <main>
         <h2>About Our Design Firm</h2>
@@ -84,7 +84,71 @@
             <a href="index.html">Home</a> |
             <a href="services.html">Services</a> |
             <a href="portfolio.html">Portfolio</a> |
-            <a href="contact.html">Contact</a>
+            <a href="#" id="contact-link">Contact</a>
+            <script>
+            (function(){
+                function openContact(e){
+                    e.preventDefault();
+                    if (document.getElementById('contact-overlay')) return;
+                    const overlay = document.createElement('div');
+                    overlay.id = 'contact-overlay';
+                    overlay.innerHTML = `
+                        <div class="contact-modal" role="dialog" aria-labelledby="contact-heading" tabindex="-1">
+                            <button class="close-btn" aria-label="Close contact">✕</button>
+                            <section class="contact-info" aria-labelledby="contact-heading">
+                                    <h2 id="contact-heading">Contact Us</h2>
+                                    <p>Email: <a href="mailto:contact@comescoopbychad.com">contact@comescoopbychad.com</a></p>
+                                    <p>Phone: <a href="tel:+17045550123">(704) 555-0123</a></p>
+                                    <p>Address: 123 Main Street, Charlotte, NC 28202</p>
+                            </section>
+                        </div>
+                    `;
+                    Object.assign(overlay.style, {
+                        position: 'fixed',
+                        inset: '0',
+                        background: 'rgba(0,0,0,0.6)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: '9999'
+                    });
+                    const modal = overlay.querySelector('.contact-modal');
+                    Object.assign(modal.style, {
+                        position: 'relative',
+                        background: '#fff',
+                        padding: '1.5rem',
+                        borderRadius: '8px',
+                        maxWidth: '480px',
+                        width: '90%',
+                        boxSizing: 'border-box',
+                        color: '#222',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.2)'
+                    });
+                    const close = overlay.querySelector('.close-btn');
+                    Object.assign(close.style, {
+                        position: 'absolute',
+                        right: '12px',
+                        top: '12px',
+                        border: 'none',
+                        background: 'transparent',
+                        fontSize: '1.2rem',
+                        cursor: 'pointer'
+                    });
+                    overlay.addEventListener('click', function(ev){
+                        if (ev.target === overlay) closeOverlay();
+                    });
+                    close.addEventListener('click', closeOverlay);
+                    function closeOverlay(){
+                        overlay.remove();
+                        contactLink.focus();
+                    }
+                    document.body.appendChild(overlay);
+                    close.focus();
+                }
+                const contactLink = document.getElementById('contact-link');
+                contactLink.addEventListener('click', openContact);
+            })();
+            </script>
         </nav>
         <div class="validation-links">
             <a href="https://validator.w3.org/nu/?doc=https://cchaste1-lang.github.io/ITIS3135/comescoopbychad.com/index.html" target="_blank">HTML Validation</a> |

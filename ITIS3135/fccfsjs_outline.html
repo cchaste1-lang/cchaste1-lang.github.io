@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FCC Full Stack JavaScript Outline — Course Page</title>
+    <style>
+        /* Use border-box so width includes padding and border to avoid unexpected sizing */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root{
+            --brand:#0b5fff; --muted:#666; --bg:#fff;
+            --card:#f7f9ff; --gap:12px;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        body{margin:0;background:var(--bg);color:#111;line-height:1.35}
+        header, footer{background:var(--card);padding:18px 24px;border-bottom:1px solid #e3e8ff}
+        header h1{margin:0;font-size:1.15rem;color:var(--brand)}
+        nav a{margin-right:14px;color:var(--brand);text-decoration:none;font-weight:600}
+        main{max-width:980px;margin:22px auto;padding:18px}
+        .lead{color:var(--muted);margin:8px 0 18px}
+        /* Table styling demonstrating many table elements */
+        table {max-width:100%;border-collapse:collapse;table-layout:fixed;background:#fff;border:1px solid #e5e7ef}
+        caption{caption-side:top;text-align:left;padding:12px 14px;font-weight:700;color:var(--brand)}
+        colgroup col:first-child{width:40%} colgroup col:last-child{width:60%}
+        thead th{background:#eef4ff;padding:10px 12px;text-align:left;border-bottom:1px solid #e5e7ef}
+        tbody td{padding:12px;border-bottom:1px solid #f1f5ff;vertical-align:top}
+        tbody td ul{margin:0;padding-left:1.1rem}
+        tbody td li{margin:8px 0}
+        .section-title{font-weight:700;color:#0a3a8a}
+        .muted{color:var(--muted);font-size:0.95rem}
+        tfoot td{background:#fafbff;padding:12px;border-top:1px solid #e5e7ef;color:var(--muted)}
+        .notice{background:#fff7e6;border-left:4px solid #ffd27a;padding:10px;margin:12px 0;border-radius:4px}
+        .btn{display:inline-block;padding:8px 12px;background:var(--brand);color:#fff;text-decoration:none;border-radius:6px;font-weight:600;margin-top:8px}
+        .signature{margin-top:10px;font-size:0.95rem}
+        @media (max-width:680px){
+            colgroup col:first-child, colgroup col:last-child{width:100%}
+            table, thead, tbody, tfoot, tr, td, th{display:block}
+            thead th{display:none}
+            tbody td{display:block;border-bottom:1px solid #e9eefc}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ITIS 3135 — Course Site</h1>
+    </header>
+
+    <main>
+        <h2>FCC Full Stack JavaScript Outline</h2>
+        <p class="lead">This page summarizes the JavaScript section of the freeCodeCamp Full Stack curriculum. Each row lists a section title, approximate step count, and a 1–2 sentence description. Replace or refine counts/descriptions as you verify them from the official curriculum.</p>
+
+        <table aria-describedby="schedule">
+            <caption>freeCodeCamp — Full Stack JavaScript (sections summary)</caption>
+            <colgroup>
+                <col />
+                <col />
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th scope="col">Section</th>
+                    <th scope="col">Steps / Brief description</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><div class="section-title">Code Editors</div></td>
+                    <td><div class="muted">≈5 steps — Introduction to editors and IDE setup (VS Code), extensions, workspace basics and shortcuts to be productive.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Variables and Strings</div></td>
+                    <td><div class="muted">≈60 steps — Declaring variables, string operations, template literals, and common string methods with practice quizzes.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Booleans & Numbers</div></td>
+                    <td><div class="muted">≈35 steps — Primitive types for logic and math, numeric operations, comparison operators, and truthiness rules.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Conditionals & Control Flow</div></td>
+                    <td><div class="muted">≈40 steps — if/else, switch, ternary operations, and structuring branching logic for programs and quizzes.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Functions</div></td>
+                    <td><div class="muted">≈55 steps — Function declaration/expression, parameters, return values, scope, and higher-level examples.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Arrays</div></td>
+                    <td><div class="muted">≈45 steps — Array creation, indexing, iteration, common methods (map, filter, reduce), and practical tasks.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Objects</div></td>
+                    <td><div class="muted">≈30 steps — Object literals, property access, methods, and basic uses for modeling data structures.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">ES6+ Features</div></td>
+                    <td><div class="muted">≈50 steps — let/const, arrow functions, destructuring, spread/rest, classes, modules and modern syntax patterns.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Regular Expressions & Parsing</div></td>
+                    <td><div class="muted">≈20 steps — Basic regex syntax, pattern matching, and use cases for validating and extracting text.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Debugging & Testing</div></td>
+                    <td><div class="muted">≈15 steps — Console debugging techniques, basic unit testing concepts, and strategies for finding/fixing bugs.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Basic Data Structures</div></td>
+                    <td><div class="muted">≈22 steps — Stacks, queues, sets and maps introduction, and when to choose each structure.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Algorithm Scripting</div></td>
+                    <td><div class="muted">≈75 steps — Problem solving, common algorithm patterns, and practice problems to build reasoning and efficiency.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Object Oriented Programming</div></td>
+                    <td><div class="muted">≈25 steps — Prototypes, classes, inheritance patterns and encapsulation in JavaScript.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Functional Programming</div></td>
+                    <td><div class="muted">≈28 steps — Pure functions, immutability, higher-order functions and composition patterns.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Asynchronous JavaScript</div></td>
+                    <td><div class="muted">≈40 steps — Callbacks, Promises, async/await, and handling async flows and errors.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">APIs & AJAX</div></td>
+                    <td><div class="muted">≈30 steps — Fetch, XHR basics, REST concepts, and interacting with third-party APIs.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Node.js & Express</div></td>
+                    <td><div class="muted">≈55 steps — Server-side JavaScript basics, routing, middleware and building simple REST endpoints.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Databases (MongoDB & Mongoose)</div></td>
+                    <td><div class="muted">≈45 steps — NoSQL concepts, CRUD with MongoDB, and using Mongoose for schemas and queries.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Security & Authentication</div></td>
+                    <td><div class="muted">≈20 steps — Basic auth concepts, sessions/JWT, and best practices for securing endpoints and user data.</div></td>
+                </tr>
+
+                <tr>
+                    <td><div class="section-title">Projects & Capstones</div></td>
+                    <td><div class="muted">≈12 steps — Guided project builds and capstone(s) demonstrating full-stack capabilities and deployment basics.</div></td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <strong>Student plan and acknowledgement</strong>
+                        <p id="schedule" class="muted">
+                            I, Chad Chasten, intend to finish the freeCodeCamp Full Stack JavaScript section within 4 weeks. The schedule below breaks the curriculum into weekly parts with target dates.
+                        </p>
+
+                        <ol>
+                            <li>Week 1 : Code Editors; Variables & Strings; Booleans & Numbers — complete fundamentals and quizzes.</li>
+                            <li>Week 2 : Conditionals; Functions; Arrays; Objects — practice problems and small exercises.</li>
+                            <li>Week 3 : ES6+; Async JavaScript; APIs & AJAX; Node.js basics — build simple endpoints and consume APIs.</li>
+                            <li>Week 4 : Databases; Security & Auth; Projects & Capstones — integrate DBs, secure routes, and complete capstone.</li>
+                        </ol>
+
+                        <p class="signature">I acknowledge this is a single course assignment and will manage it as one deliverable within the above timeframe.<br><strong>Chad Chasten, October 5th, 2025</strong></p>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </main>
+
+    <footer>
+        <small>ITIS 3135 — Course pages — built for in-class integration. Replace counts and descriptions with verified curriculum details before final submission.</small>
+    </footer>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</body>
+</html>
