@@ -1,0 +1,13 @@
+/* Styles for the contact form on contact.html */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    min-height: 1.2em; /* Reserve space for the message */
+}
+
+/* Optional: Highlight the input field itself if it has an error */
+input:invalid:not(:placeholder-shown),
+input.error {
+    border: 2px solid red;
+}

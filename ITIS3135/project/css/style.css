@@ -1,0 +1,16 @@
+/* This rule ensures the answer is initially hidden */
+.hidden {
+    display: none;
+}
+
+/* Optional: Add smooth transition for visual effect */
+.faq-answer {
+    /* Set initial state for transition */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+/* When visible, set max-height to a value that covers the content */
+.faq-answer:not(.hidden) {
+    max-height: 200px; /* Adjust this value to be taller than your content */
+}
